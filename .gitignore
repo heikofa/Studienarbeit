@@ -1,0 +1,13 @@
+doc/latex/**/*.bak
+doc/latex/**/*.log
+doc/latex/**/*.toc
+doc/latex/**/*.lol
+doc/latex/**/*.lot
+doc/latex/**/*.lof
+doc/latex/**/*.blg
+doc/latex/**/*.bcf
+doc/latex/**/*.bbl
+doc/latex/**/*.aux
+doc/latex/**/*.out
+doc/latex/*.run.xml
+**/*.meta
