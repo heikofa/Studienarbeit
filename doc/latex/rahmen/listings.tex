@@ -1,0 +1,104 @@
+\usepackage{listings}
+
+%Color
+\usepackage{color}
+\usepackage{xcolor}
+
+%\definecolor{sh_comment}{rgb}{0.12, 0.38, 0.18 } %adjusted, in Eclipse: {0.25, 0.42, 0.30 } = #3F6A4D
+%\definecolor{sh_keyword}{rgb}{0.37, 0.08, 0.25}  % #5F1441
+%\definecolor{sh_string}{rgb}{0.06, 0.10, 0.98} % #101AF9
+
+\definecolor{identifierstyle}{rgb}{0.0, 0.0, 0.0}
+\definecolor{keyword}{rgb}{0.01, 0.28, 1.0}
+\definecolor{ndkeyword}{rgb}{0.01, 0.28, 1.0}
+\definecolor{string}{rgb}{0.8, 0.0, 0.0}
+\definecolor{comment}{rgb}{0.01, 0.75, 0.24}
+\definecolor{background}{rgb}{0.97, 0.97, 1.0}
+
+
+\definecolor{editorLightGray}{cmyk}{0.05, 0.05, 0.05, 0.1}
+\definecolor{editorGray}{cmyk}{0.6, 0.55, 0.55, 0.2}
+\definecolor{editorPurple}{cmyk}{0.5, 1, 0, 0}
+\definecolor{editorWhite}{cmyk}{0, 0, 0, 0}
+\definecolor{editorBlack}{cmyk}{1, 1, 1, 1}
+\definecolor{editorOrange}{cmyk}{0, 0.8, 1, 0}
+\definecolor{editorBlue}{cmyk}{1, 0.6, 0, 0}
+\definecolor{editorPink}{cmyk}{0, 1, 0, 0}
+    
+%Mathnotation size
+\def\lstsmallmath{\leavevmode\ifmmode \scriptstyle \else  \fi}
+\def\lstsmallmathend{\leavevmode\ifmmode  \else  \fi}
+
+\lstdefinelanguage{HTML5}{
+  language=html,
+  tagstyle=\color{editorBlue},
+  markfirstintag,
+  morecomment=[s]{<!-}{-->},
+}
+
+
+\lstdefinelanguage{JavaScript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, let, const},
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]"
+}
+
+
+\lstdefinelanguage{typescript}{
+  keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break, export, import, let, class, interface, from, super, constructor, const, as, string, any, number, instanceof, void, extends},
+  ndkeywords={class, export, boolean, throw, implements, import, this},
+  sensitive=false,
+  comment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstdefinelanguage{scss} 
+{morekeywords={color,background,margin,padding,font,weight,display,position,top,
+left,right,bottom,list,style,border,size,white,space,min,width, label, span,@extend}, 
+sensitive=false, 
+morecomment=[l]{//}, 
+morecomment=[s]{/*}{*/}, 
+morestring=[b]", 
+} 
+
+\lstset{%
+    % Basic design
+    backgroundcolor=\color{background},
+    basicstyle={\small
+    %\ttfamily
+    },   
+    %frame=l,
+    % Line numbers
+    xleftmargin={0cm},
+    %numbers=left,
+    stepnumber=1,
+    firstnumber=1,
+    numberfirstline=true,
+    % Code design
+    %identifierstyle=\color{ident},
+    %keywordstyle=\color{keyword}\bfseries,
+    %ndkeywordstyle=\color{ndkeyword}\bfseries,
+    %stringstyle=\color{string}\ttfamily,
+    %commentstyle=\color{comment}\ttfamily,
+    % Code
+    language={JavaScript},
+    tabsize=2,
+    showtabs=false,
+    showspaces=false,
+    showstringspaces=false,
+    extendedchars=true,
+    breaklines=true,
+    captionpos=b,
+  %tagstyle=\color{editorBlue},
+  identifierstyle=\color{editorGray},
+  keywordstyle=\color{editorPurple},
+  commentstyle=\color{editorOrange},
+  stringstyle=\color{editorPink}
+}
+
