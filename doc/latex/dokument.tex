@@ -1,0 +1,84 @@
+\include{rahmen/variablen}
+\input{rahmen/header}
+%Remove Empty lines in lists
+\makeatletter
+\DeclareRobustCommand*{\deactivateaddvspace}{\let\addvspace\@gobble}
+\makeatother
+\AtBeginDocument{%
+  \addtocontents{lof}{\deactivateaddvspace}%
+  \addtocontents{lot}{\deactivateaddvspace}%
+  %\addtocontents{lol}{\deactivateaddvspace}%
+  % Hier ggf. weitere einfügen.
+}
+
+\addbibresource{rahmen/lib.bib}
+
+\begin{document}
+
+%Glossar
+
+\setlength{\parindent}{0mm}
+
+%mindestens 3 Zeilen auf der Seite
+\widowpenalties 3 10000 10000 100
+\clubpenalties 3 10000 10000 100 
+
+\include{rahmen/deckblatt}
+
+\renewcommand{\thepage}{\Roman{page}}
+\setcounter{page}{1}
+% Formale Erklärungen
+\include{rahmen/erklaerung}
+%Abstract
+
+% Inhaltsverzeichnis
+\tableofcontents
+\newpage
+\newpage
+
+\phantomsection
+\addcontentsline{toc}{chapter}{Abkürzungsverzeichnis}
+\include{rahmen/abkuerzungsverzeichnis}
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+\lstlistoflistings
+
+%--> Speichern der Zahl fürs umsetzten zurück auf römische 
+\newcounter{SeitenzahlSpeicher}
+\setcounter{SeitenzahlSpeicher}{\value{page}}
+
+\newpage
+
+%Arabische Nummerierung
+\renewcommand{\thepage}{\arabic{page}}
+	\setcounter{page}{1}
+%Set Tablespacing
+\def\arraystretch{1.5}
+
+%Kapitel
+\include{chapter/einleitung}
+\include{chapter/grundlagen}
+\include{chapter/analyse}
+\include{chapter/impl}
+\include{chapter/schluss}
+
+%Römische Nummerierung --> SeitenzahlSpeicher
+\stepcounter{SeitenzahlSpeicher}
+\renewcommand{\thepage}{\Roman{page}}
+\setcounter{page}{\theSeitenzahlSpeicher}
+
+%Literatur
+\setlength\bibitemsep{12pt}
+\printbibliography
+
+%Anhang
+\newpage
+\appendix
+\phantomsection
+\addcontentsline{toc}{chapter}{Anhang}
+\input{anhang/anhang}
+
+\end{document}

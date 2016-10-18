@@ -1,0 +1,108 @@
+%
+% Header die benutzt werden sollen
+%
+\documentclass[
+  pdftex,
+  fontsize=12pt,          % Schriftgroesse
+  DIV10,                  % Angabe bzgl Bestimmung der Seitenabstaende
+  ngerman,                % fuer Umlaute, Silbentrennung etc.
+  paper=a4,               % Papierformat
+  twoside=false,          % einseitiges Dokument
+  titlepage,              % es wird eine Titelseite verwendet
+  parskip=half,           % Abstand zwischen Absaetzen (halbe Zeile)
+  headings=normal,        % Groesse der Ueberschriften verkleinern
+  listof=totoc,  % Verzeichnisse im Inhaltsverzeichnis auffuehren.
+  bibliography=totoc, % Literaturverzeichnis im Inhaltsverzeichnis auffuehren
+  index=totoc,            % Index im Inhaltsverzeichnis auffuehren
+  captions=tableheading,  % Beschriftung von Tabellen oberhalb ausgeben
+  bookmarksopen,
+  bookmarksnumbered,
+  final                 % Status des Dokuments (final/draft)
+]{scrreprt}
+
+\usepackage{xspace} %intelligent whitespace (depends on characters after \xspace)
+
+%\usepackage {picins}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Zeilenabstand
+\usepackage[onehalfspacing]{setspace}
+
+%Tabellen
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{supertabular}
+\usepackage{longtable}
+\usepackage{multirow}
+
+%Grafiken
+\usepackage[pdftex]{graphicx}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{scrhack}	%supress warning that float is used 
+
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+
+\input{rahmen/listings}
+
+%Sprache und Anführungszeichen
+\usepackage[ngerman]{babel}
+\usepackage[babel,german=quotes]{csquotes}
+\usepackage{eurosym}
+
+%Abstände
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm ]{geometry}
+
+% Pakete um Textteile drehen zu können, oder eine Seite Querformat anzeigen kann.
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{enumerate}
+
+%Literaturverweise
+\usepackage[style=numeric, backend=biber, citestyle=numeric-comp,sorting=none
+%, dashed=false
+]{biblatex}
+%\usepackage[round]{natbib}
+%\usepackage{cite}
+
+% Hurenkinder und Schusterjungen verhindern
+% http://projekte.dante.de/DanteFAQ/Silbentrennung
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+
+%Abkürzungsverzeichnis
+\usepackage[printonlyused]{acronym}
+
+% Fussnoten
+\usepackage[perpage, hang, multiple, stable]{footmisc}
+
+%
+\usepackage{hyperxmp}
+\usepackage[%
+	pdftitle={},
+	pdfauthor={Micha Piertzik},
+	pdfsubject={Bachelorarbeit, Angewandte Informatik, DHBW Karlsruhe},
+	pdfcreator={pdflatex, LaTeX with KOMA-Script},
+	pdfpagemode=UseOutlines, % Beim Oeffnen Inhaltsverzeichnis anzeigen
+	pdfdisplaydoctitle=true, % Dokumenttitel statt Dateiname anzeigen.
+	pdflang=de, % Sprache des Dokuments.
+	pdfkeywords={},
+	hidelinks
+]{hyperref}
+
+\usepackage[all]{hypcap}
+
+\usepackage{pdfpages}
+
+%
+% EOF
+%
